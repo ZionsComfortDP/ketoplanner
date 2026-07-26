@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add to Home Screen — Meal Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F1E6;
+    --paper-2:#EFE9DA;
+    --ink:#20241A;
+    --avocado:#54633F;
+    --avocado-dark:#3C4830;
+    --butter:#E3A92C;
+    --clay:#B14E2C;
+    --line-soft:#CFC7AE;
+    --white:#FFFDF8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    padding:32px 20px 60px;
+  }
+  .wrap{max-width:720px; margin:0 auto;}
+  header{
+    border-bottom:3px solid var(--ink);
+    padding-bottom:16px;
+    margin-bottom:26px;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--avocado-dark);
+    margin:0 0 6px;
+  }
+  h1{
+    font-family:'Archivo Black', sans-serif;
+    font-weight:400;
+    font-size:clamp(24px, 4vw, 34px);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .intro{
+    font-size:15px;
+    line-height:1.6;
+    margin-bottom:30px;
+  }
+  .card{
+    background:var(--white);
+    border:1.5px solid var(--line-soft);
+    margin-bottom:22px;
+  }
+  .card-head{
+    padding:14px 18px;
+    border-bottom:2px solid var(--ink);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .card-head .num{
+    font-family:'Archivo Black', sans-serif;
+    font-size:18px;
+    background:var(--avocado);
+    color:var(--white);
+    width:30px;
+    height:30px;
+    min-width:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .card-head h2{
+    font-family:'Archivo Black', sans-serif;
+    font-weight:400;
+    font-size:15px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin:0;
+  }
+  .card-body{padding:18px;}
+  ol{margin:0; padding-left:20px; line-height:1.9; font-size:14.5px;}
+  ol li{margin-bottom:6px;}
+  .note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    line-height:1.7;
+    color:var(--avocado-dark);
+    background:var(--paper-2);
+    border-left:3px solid var(--avocado);
+    padding:10px 12px;
+    margin-top:14px;
+  }
+  .note.heads-up{
+    border-left-color:var(--clay);
+    color:#7A3C22;
+  }
+  .note b{color:inherit;}
+  .data-box{
+    background:var(--paper-2);
+    border:1.5px solid var(--ink);
+    padding:16px 18px;
+    font-size:14px;
+    line-height:1.7;
+  }
+  .data-box h2{
+    font-family:'Archivo Black', sans-serif;
+    font-weight:400;
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin:0 0 8px;
+  }
+  footer{
+    margin-top:30px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:#7A7462;
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Meal Planner — Digital Download</p>
+    <h1>Add it to your home screen</h1>
+  </header>
+
+  <p class="intro">Your planner lives at the web address below. Just open it in your phone's browser and add it to your home screen — no files to download, no apps to install.</p>
+
+  <div class="data-box" style="margin-bottom:22px; text-align:center;">
+    <h2 style="margin-bottom:10px;">Your Planner Link</h2>
+    <p style="margin:0; font-family:'IBM Plex Mono', monospace; font-size:15px; word-break:break-all;"><b>https://zionscomfortdp.github.io/ketoplanner/</b></p>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="num">1</span><h2>iPhone / iPad (Safari)</h2></div>
+    <div class="card-body">
+      <ol>
+        <li>Open <b>Safari</b> and go to the link above.</li>
+        <li>The planner should load right away, with working tabs across the top (Meal Library, Weekly Planner, Grocery List, Favorites).</li>
+        <li>Tap the <b>Share</b> icon (square with an arrow pointing up).</li>
+        <li>Scroll down and tap <b>Add to Home Screen</b>, name it (e.g. "Meal Planner"), then tap <b>Add</b>.</li>
+      </ol>
+      <div class="note">The icon opens the planner full-screen with no browser bars — just like a regular app.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="num">2</span><h2>Android (Chrome)</h2></div>
+    <div class="card-body">
+      <ol>
+        <li>Open <b>Chrome</b> and go to the link above.</li>
+        <li>The planner should load right away, with working tabs across the top.</li>
+        <li>Tap the <b>⋮</b> menu (top right of Chrome).</li>
+        <li>Tap <b>Add to Home screen</b>, then <b>Add</b>.</li>
+      </ol>
+      <div class="note heads-up"><b>Good to know:</b> on Android, this creates a shortcut that still launches inside Chrome (with the browser address bar visible), rather than a fully standalone app window. It's still one tap to open, and everything works exactly the same — the difference is cosmetic.</div>
+    </div>
+  </div>
+
+  <div class="data-box">
+    <h2>About your data</h2>
+    <p style="margin:0 0 8px;">Everything you enter — meals, your weekly plan, and your grocery list — saves automatically on that device as you go. Nothing is uploaded anywhere.</p>
+    <p style="margin:0;">Use the <b>Export</b> button inside the app any time to download a backup file, and <b>Import</b> to load it back in — handy for moving your data to a new phone or keeping an extra copy.</p>
+  </div>
+
+  <footer>Meal Planner · Digital Download</footer>
+</div>
+</body>
+</html>
