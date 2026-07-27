@@ -1245,11 +1245,11 @@ function renderPlanner(){
   // Per-day totals row
   html += `<tr class="day-totals-row"><td class="slot-label">Day Total</td>`;
   DAYS.forEach(day=>{
-    let dCal=0, dNetCarb=0, dFat=0;
+    let dCal=0, dNetCarb=0, dFat=0, dProtein=0;
     SLOTS.forEach(slot=>{
-      slotMeals(day, slot).forEach(m=>{ dCal += num(m.cal); dNetCarb += netCarb(m); dFat += num(m.fat); });
+      slotMeals(day, slot).forEach(m=>{ dCal += num(m.cal); dNetCarb += netCarb(m); dFat += num(m.fat); dProtein += num(m.protein); });
     });
-    html += `<td class="day-total-cell">${Math.round(dCal)} cal<br>${dNetCarb.toFixed(1)}g net carb<br>${dFat.toFixed(1)}g fat</td>`;
+    html += `<td class="day-total-cell">${Math.round(dCal)} cal<br>${dNetCarb.toFixed(1)}g net carb<br>${dFat.toFixed(1)}g fat<br>${dProtein.toFixed(1)}g protein</td>`;
   });
   html += `</tr>`;
 
@@ -1272,12 +1272,13 @@ function removeMealFromSlot(day, slot, mealId){
 }
 
 function renderWeekSummary(){
-  let totalCal=0, totalNetCarb=0, totalFat=0, totalCost=0, mealCount=0;
+  let totalCal=0, totalNetCarb=0, totalFat=0, totalProtein=0, totalCost=0, mealCount=0;
   DAYS.forEach(d=> SLOTS.forEach(s=>{
     slotMeals(d, s).forEach(m=>{
       totalCal += num(m.cal);
       totalNetCarb += netCarb(m);
       totalFat += num(m.fat);
+      totalProtein += num(m.protein);
       totalCost += num(m.cost);
       mealCount++;
     });
@@ -1287,10 +1288,12 @@ function renderWeekSummary(){
     <div class="sum-box"><div class="lbl">Meals Planned</div><div class="val">${mealCount}</div></div>
     <div class="sum-box"><div class="lbl">Avg Cal / Day</div><div class="val">${Math.round(totalCal/7)}</div></div>
     <div class="sum-box"><div class="lbl">Avg Net Carb / Day</div><div class="val">${(totalNetCarb/7).toFixed(1)}g</div></div>
+    <div class="sum-box"><div class="lbl">Avg Protein / Day</div><div class="val">${(totalProtein/7).toFixed(1)}g</div></div>
     <div class="sum-box"><div class="lbl">Total Week Cost</div><div class="val">$${totalCost.toFixed(2)}</div></div>
     <div class="sum-box wk-total"><div class="lbl">Weekly Total Calories</div><div class="val">${Math.round(totalCal)}</div></div>
     <div class="sum-box wk-total"><div class="lbl">Weekly Total Net Carbs</div><div class="val">${totalNetCarb.toFixed(1)}g</div></div>
     <div class="sum-box wk-total"><div class="lbl">Weekly Total Fat</div><div class="val">${totalFat.toFixed(1)}g</div></div>
+    <div class="sum-box wk-total"><div class="lbl">Weekly Total Protein</div><div class="val">${totalProtein.toFixed(1)}g</div></div>
   `;
 }
 
