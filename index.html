@@ -736,7 +736,7 @@
               <textarea id="f-paste" placeholder="Copy the recipe title and ingredient list from a recipe site or app, then paste the whole thing here..." style="min-height:130px;"></textarea>
             </div>
             <button class="primary-btn" id="parseRecipeBtn" type="button">Parse Ingredients →</button>
-            <p class="hint" style="margin:10px 0 0;">This reads the recipe name and ingredient list from what you paste. Nutrition and cost aren't in most recipe text, so you'll fill those in on the next step — recipe sites rarely publish exact keto macros anyway, so double-checking is worth doing regardless.</p>
+            <p class="hint" style="margin:10px 0 0;">This reads the recipe name and ingredient list from what you paste. Nutrition and cost aren't in most recipe text, so you'll fill those in on the next step — recipe sites rarely publish exact nutrition macros anyway, so double-checking is worth doing regardless.</p>
           </div>
 
           <div id="typeBlock">
@@ -803,6 +803,8 @@
     </div>
   </div>
 
+  <div style="font-family:'IBM Plex Mono', monospace; font-size:10px; color:#9C9682; text-align:center; margin:24px 0 4px;">Licensed for personal use by the original buyer only — please don't share, resell, or redistribute.</div>
+
   <div id="printArea" class="print-only"></div>
   <div id="toast" class="toast"></div>
   <div id="foodPickerOverlay" class="picker-overlay" onclick="if(event.target===this) closeFoodPicker()"></div>
@@ -826,7 +828,7 @@ let nextGroceryId = 1;
 let editingMealId = null;
 let dirty = false;
 
-const AUTOSAVE_KEY = 'ketoPlannerData_v1';
+const AUTOSAVE_KEY = 'mealPlannerData_v1';
 
 function autoSaveToDevice(){
   try{
