@@ -292,7 +292,7 @@
     outline:none;
   }
   .prep-steps summary:hover{ color:var(--avocado); }
-  .prep-steps ol{
+  .prep-steps ol, .prep-steps ul{
     margin:8px 0 2px;
     padding-left:20px;
     font-size:12.5px;
@@ -1164,10 +1164,22 @@ function renderLibrary(){
         <span>${num(m.fat).toFixed(0)}g fat</span>
         <span>$${num(m.cost).toFixed(2)}</span>
       </div>
+      ${ingredientsHtml(m)}
       ${prepStepsHtml(m)}
       ${cardActionsHtml(m.id)}
     </div>
   `).join('');
+}
+
+function ingredientsHtml(m){
+  if(!m.ingredients || !m.ingredients.trim()) return '';
+  const itemsHtml = m.ingredients.split('\n').map(l=>l.trim()).filter(Boolean)
+    .map(l=> `<li>${escapeHtml(l)}</li>`).join('');
+  return `
+    <details class="prep-steps">
+      <summary>🛒 Ingredients</summary>
+      <ul>${itemsHtml}</ul>
+    </details>`;
 }
 
 function prepStepsHtml(m){
@@ -1552,6 +1564,7 @@ function renderFavorites(){
         <span>${num(m.fat).toFixed(0)}g fat</span>
         <span>$${num(m.cost).toFixed(2)}</span>
       </div>
+      ${ingredientsHtml(m)}
       ${prepStepsHtml(m)}
       ${cardActionsHtml(m.id)}
     </div>
